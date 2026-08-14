@@ -1,3 +1,7 @@
+/* 
+  When a new user signup on clerk on my app , user.created it receives the 
+  webhook susbcription messages(Just Stay Url Updated While in Development Phase)
+ */
 import { Webhook } from "svix";
 import { User } from "../models/userModel.js";
 import type { Request, Response } from "express";

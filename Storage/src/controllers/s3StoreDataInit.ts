@@ -1,3 +1,7 @@
+/* 
+Generate the Pre-Signed Url and return back to the user
+*/
+
 import type { Request, Response } from "express";
 import { s3Client } from "../utils/s3client.js";
 import { ListBucketsCommand, PutObjectAclCommand, PutObjectCommand } from "@aws-sdk/client-s3";
@@ -50,7 +54,7 @@ const s3StoreDataInit = async (req: Request, res: Response) => {
   const preSignedUrl = await preSignedUrlFn(objPath);
   // console.log('presignedurl', preSignedUrl);
 
-  await FileStore.create({  
+  await FileStore.create({
     userId,
     objPath,
     objUniqueName,
