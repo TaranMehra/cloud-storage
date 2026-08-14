@@ -1,0 +1,32 @@
+{
+  "name": "storage",
+  "version": "1.0.0",
+  "description": "personal storage drive",
+  "license": "ISC",
+  "author": "taranpreet-singh",
+  "type": "module",
+  "main": "server.ts",
+  "scripts": {
+    "dev": "npx tsx watch ./src/server.ts",
+    "tyep-check": "npx tsc --noEmit --watch"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1042.0",
+    "@aws-sdk/s3-request-presigner": "^3.1043.0",
+    "@clerk/express": "^2.1.10",
+    "@types/express": "^5.0.6",
+    "axios": "^1.16.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.5.0",
+    "socket.io": "^4.8.3",
+    "svix": "^1.92.2",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.3",
+    "uuid": "^14.0.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19"
+  }
+}

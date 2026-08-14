@@ -1,0 +1,68 @@
+clg(body) -> after json parsing
+
+{
+  "Type" : "Notification",
+  "MessageId" : "0a6a4e8b-d690-500b-9ec7-2cfc8a657107",
+  "TopicArn" : "arn:aws:sns:us-east-1:933641572984:test-1",
+  "Subject" : "Amazon S3 Notification",
+  "Message" : "{\"Records\":[{\"eventVersion\":\"2.1\",\"eventSource\":\"aws:s3\",\"awsRegion\":\"us-east-1\",\"eventTime\":\"2026-05-08T03:38:28.397Z\",\"eventName\":\"ObjectCreated:Put\",\"userIdentity\":{\"principalId\":\"AWS:AIDA5SYK72J4GLOURTUW2\"},\"requestParameters\":{\"sourceIPAddress\":\"38.137.31.90\"},\"responseElements\":{\"x-amz-request-id\":\"NDWX8BPWCWW4AY1N\",\"x-amz-id-2\":\"PSWsdXAHYx2XDjoJjQEyhTu/P35mmAXFiPD4a7eOIRTIhU1z3G7IuynkvBatnVO70R8y0Ex+8rQNk38YSCJ5TEUcD9Ld+qaR\"},\"s3\":{\"s3SchemaVersion\":\"1.0\",\"configurationId\":\"test-1-AnyAction\",\"bucket\":{\"name\":\"first-bucket-ecom-s3\",\"ownerIdentity\":{\"principalId\":\"A1WK038BXJFM5V\"},\"arn\":\"arn:aws:s3:::first-bucket-ecom-s3\"},\"object\":{\"key\":\"id_1234124qwe3/filae1.png/47f6827b-61c2-43f1-a28d-154ca6fedcdb\",\"size\":0,\"eTag\":\"d41d8cd98f00b204e9800998ecf8427e\",\"sequencer\":\"0069FD5AB45D27E7C9\"}}}]}",
+  "Timestamp" : "2026-05-08T03:38:29.513Z",
+  "SignatureVersion" : "1",
+  "Signature" : "G0FGp1gMxD02AUSMPYr3g54hwSFyLzS2WG6YUZtPUW16bbzEh0sIklp53MsVb/tZbCUwkmZtQOdRav7w+wRECIj+eGf1qpuTW2RiRG8UlfGqW2gmdv9suaqHQB9IWc6xId9jid/j2O4x2YMnwIdPn4H6+8w7S5LMZrc3beNuJ4yNOieEe04SX1ycgywrlz/FJtD/ZGOomu7gpFWQiOof0LvKwzn7FJcpsM51ZcEKpdy+4OVQVxPOxoJd0N443m2IDmbFunGRKv/xTi99k/ISV8Q4lsNoDA2H6TsTODfi97t3SfmybzlcZ+4SBQlloHPGZZEF5zZSXG6//6PNUSFz0g==",
+  "SigningCertURL" : "https://sns.us-east-1.amazonaws.com/SimpleNotificationService-7506a1e35b36ef5a444dd1a8e7cc3ed8.pem",
+  "UnsubscribeURL" : "https://sns.us-east-1.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:us-east-1:933641572984:test-1:f6bfc162-6660-42ab-872f-424da0f5e152"
+}
+
+// only req.body
+{
+  Type: 'Notification',
+  MessageId: '0a6a4e8b-d690-500b-9ec7-2cfc8a657107',
+  TopicArn: 'arn:aws:sns:us-east-1:933641572984:test-1',
+  Subject: 'Amazon S3 Notification',
+  Message: '{"Records":[
+    {"eventVersion":"2.1",
+    "eventSource":"aws:s3",
+    "awsRegion":"us-east-1",
+    "eventTime":"2026-05-08T03:38:28.397Z",
+    "eventName":"ObjectCreated:Put",
+    "userIdentity":{"principalId":"AWS:AIDA5SYK72J4GLOURTUW2"},
+    "requestParameters":{"sourceIPAddress":"38.137.31.90"},
+    "responseElements":{"x-amz-request-id":"NDWX8BPWCWW4AY1N","x-amz-id-2":"PSWsdXAHYx2XDjoJjQEyhTu/P35mmAXFiPD4a7eOIRTIhU1z3G7IuynkvBatnVO70R8y0Ex+8rQNk38YSCJ5TEUcD9Ld+qaR"},
+    "s3":{
+      "s3SchemaVersion":"1.0",
+      "configurationId":"test-1-AnyAction",
+      "bucket":{
+          "name":"first-bucket-ecom-s3",
+          "ownerIdentity":{"principalId":"A1WK038BXJFM5V"},
+          "arn":"arn:aws:s3:::first-bucket-ecom-s3"
+                },
+        "object":{
+          "key":"id_1234124qwe3/filae1.png/47f6827b-61c2-43f1-a28d-154ca6fedcdb",
+          "size":0,
+          "eTag":"d41d8cd98f00b204e9800998ecf8427e",
+          "sequencer":"0069FD5AB45D27E7C9"
+          }
+        }
+     }
+     ]
+     }',
+  Timestamp: '2026-05-08T03:38:29.513Z',
+  SignatureVersion: '1',
+  Signature: 'G0FGp1gMxD02AUSMPYr3g54hwSFyLzS2WG6YUZtPUW16bbzEh0sIklp53MsVb/tZbCUwkmZtQOdRav7w+wRECIj+eGf1qpuTW2RiRG8UlfGqW2gmdv9suaqHQB9IWc6xId9jid/j2O4x2YMnwIdPn4H6+8w7S5LMZrc3beNuJ4yNOieEe04SX1ycgywrlz/FJtD/ZGOomu7gpFWQiOof0LvKwzn7FJcpsM51ZcEKpdy+4OVQVxPOxoJd0N443m2IDmbFunGRKv/xTi99k/ISV8Q4lsNoDA2H6TsTODfi97t3SfmybzlcZ+4SBQlloHPGZZEF5zZSXG6//6PNUSFz0g==',
+  SigningCertURL: 'https://sns.us-east-1.amazonaws.com/SimpleNotificationService-7506a1e35b36ef5a444dd1a8e7cc3ed8.pem',
+  UnsubscribeURL: 'https://sns.us-east-1.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:us-east-1:933641572984:test-1:f6bfc162-6660-42ab-872f-424da0f5e152'
+}
+
+
+//arn:aws:sns:us-east-1:933641572984:test-1
+
+
+
+Server is running at 3400
+s3-cluster is Connected
+From inside Notification
+eventName: ObjectCreated:Put, eventTime:2026-05-08T16:05:49.781Z
+object['key']: Screenshot+from+2025-12-18+11-52-50.png, object_size:304643, object_eTag:89cc274c8a00c0fa85e0b271b5ba3d82
+bucketName: first-bucket-ecom-s3, bucketArn:arn:aws:s3:::first-bucket-ecom-s3
+(node:413877) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+(Use `node --trace-warnings ...` to show where the warning was created)
